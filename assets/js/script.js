@@ -1,23 +1,28 @@
-function getApi() {
-    var requestUrl = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7"
+var fetchTicketsEl = document.querySelector("#ticketMaster");
+var fetchRecipesEl = document.querySelector("#mealDB")
+var requestEventUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7"
+var requestMealUrl = "https://www.themealdb.com/api/json/v1/1/categories.php";
 
-fetch(requestUrl)
+function getTicketsApi() {
+event.preventDefault();
+fetch(requestEventUrl)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
-      for (var i = 0; i < data.length; i++) {
           console.log(data);
-      }
     });
-    return fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-    .then(function(response) {
-        return response.json();
-      })
-      .then(function(mealData) {
-        for (var i = 0; i < mealData.length; i++) {
-            console.log(mealData);
-        }
-      });
 }
-getApi();
+
+function getRecipesApi() {
+    event.preventDefault();
+    fetch(requestMealUrl)
+        .then(function(response) {
+            return response.json();
+          })
+          .then(function(mealData) {
+                console.log(mealData);
+          });
+    }
+fetchTicketsEl.addEventListener("click", getTicketsApi);
+fetchRecipesEl.addEventListener("click", getRecipesApi);

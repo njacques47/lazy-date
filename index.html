@@ -6,23 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
   <title>Lazy Date</title>
 </head>
 
 <body>
-  <header>
-    <h1>
+  <header data-container data-stick-to>
+    <h1 class="title-bar">
       <!-- logo goes here -->
       LAZY DATE
     </h1>
-    <nav>
+    <nav class="top-bar">
       <!-- navigation & ul goes here -->
       <ul class="">
-        <li class="navbar">
+        <li class="navbar menu-tex">
           <!-- saved events/date ideas -->
           <a href="#saved">Saved Events</a>
         </li>
-        <li class="navbar">
+        <li class="navbar menu-text">
           <!-- about the developers page -->
           <a href="#about">About</a>
         </li>
@@ -38,59 +39,62 @@
     </h2>
   </section>
 
-  <div class="user-interface">
-    <div class="split-left">
-      <form action="">
-        <!-- search events -->
-        <label for="event-search"></label>
-        <input type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
+  <div class="grid-y grid-y-padding medium-grid-frame">
+    <div class="user-interface grid-x grid-padding-x">
+      <div class="cell small-12 medium-6 columns">
+        <form action="">
+          <!-- search events -->
+          <label for="event-search"></label>
+          <input type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
 
-        <!-- pick date for event -->
-        <label for="date">Please select a date:</label>
-        <input type="date" name="date" id="date">
+          <!-- pick date for event -->
+          <label class="label" for="date">Please select a date:</label>
+          <input type="date" name="date" id="date">
 
-        <!-- enter location for the event by city/state OR zipcode -->
-        <label for="location"></label>
-        <input type="text" name="location" placeholder="city, state OR zipcode" />
+          <!-- enter location for the event by city/state OR zipcode -->
+          <label for="location"></label>
+          <input type="text" name="location" placeholder="city, state OR zipcode" />
 
-        <!-- button to submit/click event -->
-        <button type="submit">Search</button>
+          <!-- button to submit/click event -->
+          <button type="submit" class="button round">Search</button>
 
-      </form>
-    </div>
-
-    <div class="vl">
-      <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
-    </div>
-
-    <div class="split-right ">
-      <!-- where the api content gets rendered -->
-      <div class="results-container">
-        <div class="img-preview">
-          <!-- rendered image goes here -->
-          <img src="https://via.placeholder.com/350x250" alt="">
-        </div>
-
-        <div class="results-summary">
-          <!-- either a blurb about the event or instructions -->
-          <h3>Placeholder Event Title Here</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
-            cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis, aperiam.
-            Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus asperiores
-            cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus molestiae
-            obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
-            repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
-          </p>
-          <!-- youtube link goes here?? -->
-        </div>
-
+        </form>
       </div>
+      
+      <div class="vl">
+        <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
+      </div>
+    
+      <div class="cell small-12 medium-6 columns">
+        <!-- where the api content gets rendered -->
+        <div class="media-object">
+          <div class="results-container media-object-section">
+            <!-- rendered image goes here -->
+            <div class="cell small-12 medium-6 thumbnail">
+              <img src="https://via.placeholder.com/350x250" alt="">
+            </div>  
+          </div>
+      
+          <div class="cell small-12  medium-6 results-summary media-object-section">
+            <!-- either a blurb about the event or instructions -->
+            <h3>Placeholder Event Title Here</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+              cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis, aperiam.
+              Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus asperiores
+              cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus molestiae
+              obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+              repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+            </p>
+            <!-- youtube link goes here?? -->
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
   </div>
-
-
 
 
   <footer>
@@ -106,6 +110,7 @@
 
 
   <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

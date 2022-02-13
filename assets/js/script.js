@@ -1,6 +1,7 @@
 var fetchTicketsEl = document.querySelector("#ticketMaster");
 var fetchRecipesEl = document.querySelector("#mealDB");
-var renderRightEl = $("#split-right");
+var submitBtn = $("#btn");
+var renderRightEl = $(".split-right");
 var requestEventUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=345&apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7"
 var requestMealUrl = "https://www.themealdb.com/api/json/v1/1/categories.php";
 
@@ -39,5 +40,7 @@ function getRecipesApi(event) {
              console.log(mealData);
           });
     }
+
+
 fetchTicketsEl.addEventListener("click", getTicketsApi);
 fetchRecipesEl.addEventListener("click", getRecipesApi);

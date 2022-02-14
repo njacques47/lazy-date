@@ -2,29 +2,31 @@ body {
   margin: 0;
 }
 
+
+
 .vl {
-  border-left: 6px solid green;
+  border-left: 6px solid eff3e3;
   height: 450px;
   position: absolute;
   left: 50%;
-  margin-left: -3px;
   top: 50;
 }
 
-.split-left {
-  /* display: flex; */
+/* .split-left {
+  display: flex;
   float: left;
   max-width: 45%;
 }
 
 .split-right {
-  /* display: flex; */
+  display: flex;
   float: right;
   max-width: 45%;
-}
+} */
 
 .user-interface {
-  background-color: #C6CCB2;
+  background-color: #eff3e3;
   border-color: 6px solid red;
-  display: flex;
+  /* display: flex; */
 }
+

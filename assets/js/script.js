@@ -15,8 +15,8 @@ event.preventDefault();
     localStorage.setItem("user", JSON.stringify(user));
 }
 
-    //console.log(user.eventSearch)
-    //console.log(user.date);
-    //console.log(user.location);
+    console.log(user.eventSearch)
+    console.log(user.date);
+    console.log(user.location);
 
 fetchTicketsEl.addEventListener("click", saveEvents);

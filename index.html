@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <title>Lazy Date</title>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <!-- logo goes here -->
+      LAZY DATE
+    </h1>
+    <nav>
+      <!-- navigation & ul goes here -->
+      <ul class="">
+        <li class="navbar">
+          <!-- saved events/date ideas -->
+          <a href="#saved">Saved Events</a>
+        </li>
+        <li class="navbar">
+          <!-- about the developers page -->
+          <a href="#about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- jumbotron for testamonials? not sold on this so we can revisit -->
+  <section>
+    <h2>
+      Do you suck at planning dates? We got you covered! Let us help you impress the special someone in your life.
+    </h2>
+  </section>
+
+  <div class="user-interface">
+    <div class="split-left">
+      <form action="">
+        <!-- search events -->
+        <label for="event-search"></label>
+        <input id="eventSearch" type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
+
+        <!-- pick date for event -->
+        <label for="date">Please select a date:</label>
+        <input id="eventDate" type="date" name="date" id="date">
+
+        <!-- enter location for the event by city/state OR zipcode -->
+        <label for="location"></label>
+        <input id="eventLocation" type="text" name="location" placeholder="city, state OR zipcode" />
+
+        <!-- button to submit/click event -->
+        <button id="searchButton" type="submit">Search</button>
+
+      </form>
+    </div>
+
+    <div class="vl">
+      <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
+    </div>
+
+    <div class="split-right ">
+      <!-- where the api content gets rendered -->
+      <div class="results-container">
+        <div class="img-preview">
+          <!-- rendered image goes here -->
+          <img src="https://via.placeholder.com/350x250" alt="">
+        </div>
+
+        <div class="results-summary">
+          <!-- either a blurb about the event or instructions -->
+          <h3>Placeholder Event Title Here</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+            cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis, aperiam.
+            Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus asperiores
+            cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus molestiae
+            obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+            repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+          </p>
+          <!-- youtube link goes here?? -->
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <footer>
+    <!-- footer -->
+    <div class="footer-elements" id="saved">
+      <!-- render saved items here???? -->
+    </div>
+
+    <div class="footer-elements" id="about">
+      <!-- blurb about the project here? -->
+    </div>
+  </footer>
+
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+  <title>Lazy Date</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="title-bar">
+      <!-- logo goes here -->
+      LAZY DATE
+    </h1>
+    <nav class="top-bar">
+      <!-- navigation & ul goes here -->
+      <ul class="dropdown menu">
+        <li class="navbar">
+          <!-- saved events/date ideas -->
+          <a href="#saved">Saved Events</a>
+        </li>
+        <li class="navbar">
+          <!-- about the developers page -->
+          <a href="#about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- jumbotron for testamonials? not sold on this so we can revisit -->
+  <section class="grid-container text-center light-gray">
+    <h3>
+      Do you suck at planning dates? We got you covered!<br>
+        Let us help you impress the special someone in your life.
+      </h3>
+  </section>
+
+  <div class="grid-y grid-y-padding medium-grid-frame">
+    <div class="user-interface grid-x grid-padding-x grid-padding-y">
+      <div class="cell thumbnail small-12 medium-12 large-6 grid">
+        <form action="">
+          <!-- search events -->
+          <label class="label" for="event-search">Please select and event or artist</label>
+          <input type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
+
+          <!-- pick date for event -->
+          <label class="label" for="date">Please select a date:</label>
+          <input type="date" name="date" id="date">
+
+          <!-- enter location for the event by city/state OR zipcode -->
+          <label class="label" for="location">Please enter your desired location</label>
+          <input type="text" name="location" placeholder="city, state OR zipcode" />
+
+            <!-- button to submit/click event -->
+            <button type="submit" class="round button primary">Search</button>
+
+        </form>
+      </div>
+      
+      <div class="vl grid-padding-x">
+        <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
+      </div>
+    
+      <div class="cell thumbnail small-12 medium-12 large-6">
+        <!-- where the api content gets rendered -->
+        <div class="media-object grid-padding-x">
+          <div class="results-container media-object-section column">
+            <!-- rendered image goes here -->
+            <div class="cell small-3 responsive-embed ">
+              <img class="th" src="https://via.placeholder.com/350x250" alt="">
+            </div>  
+          </div>
+      
+          <div class="cell small-9 results-summary media-object-section column">
+            <!-- either a blurb about the event or instructions -->
+            <h4 class="text-center">Placeholder Event Title Here</h3>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+              cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis, aperiam.
+              Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus asperiores
+              cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus molestiae
+              obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+              repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+            </p>
+            <!-- youtube link goes here?? -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer class="title-bar">
+    <!-- footer -->
+    <div class="footer-elements" id="saved">
+      <!-- render saved items here???? -->
+    </div>
+
+    <div class="footer-elements" id="about">
+      <!-- blurb about the project here? -->
+    </div>
+  </footer>
+
+
+  <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

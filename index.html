@@ -13,14 +13,14 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="">
+  <header class="top-bar">
+    <h1 class="top-bar-left">
       <!-- logo goes here -->
       LAZY DATE
     </h1>
-    <nav class="">
+    <nav class="top-bar-right">
       <!-- navigation & ul goes here -->
-      <ul class="">
+      <ul class="menu">
         <li class="">
           <!-- saved events/date ideas -->
           <a href="#saved">Saved Events</a>
@@ -68,8 +68,23 @@
       </div>
 
       <!-- meals db api goes here -->
-      <div id="recipe-form-container">
-        <!-- search form here????? -->
+      <div id="recipe-form-container" class="">
+        <form action="">
+          <!-- search events -->
+          <label class="label" for="event-search">Please select and event or artist</label>
+          <input type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
+
+          <!-- pick date for event -->
+          <label class="label" for="date">Please select a date:</label>
+          <input type="date" name="date" id="date">
+
+          <!-- location search -->
+          <label class="label" for="location">Enter zipcode to search:</label>
+          <input type="text" name="location" pattern="[0-9]*" placeholder="zipcode" />
+
+          <!-- button to submit/click event -->
+          <button id="event-search-btn" type="submit" class="round button primary">Search</button>
+        </form>
       </div>
     </div>
 

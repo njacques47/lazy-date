@@ -4,16 +4,30 @@ body {
 
 }
 
+h1 {
+  font-family: Lobster;
+}
+
 nav ul li a {
   color: #dce7f5;
 }
 
+
 h3 {
+  font-family: Lobster;
   color: #dce7f5;
+}
+
+section h4 {
+  font-family: Lobster;
 }
 
 footer {
   padding-top: 50px;
+}
+
+footer h5 {
+  font-family: Lobster;
 }
 
 .vl {
@@ -22,6 +36,10 @@ footer {
   position: absolute;
   left: 50%;
   top: 50;
+}
+
+img {
+  border-radius: 2%;
 }
 
 /* .split-left {
@@ -71,5 +89,30 @@ footer {
 .thumbnail {
   border-radius: 4%;
   background: #dce7f5;
+}
+
+.heart { 
+  position: relative; 
+  width: 100px; 
+  height: 90px; 
+} 
+
+.heart:before, .heart:after { 
+  position: absolute; 
+  content: ""; 
+  left: 50px; 
+  top: 0; 
+  width: 50px; 
+  height: 80px; 
+  background: red; 
+  border-radius: 50px 50px 0 0; 
+  transform: rotate(-45deg); 
+  transform-origin: 0 100%; 
+} 
+
+.heart:after { 
+  left: 0; 
+  transform: rotate(45deg); 
+  transform-origin :100% 100%; 
 }
 

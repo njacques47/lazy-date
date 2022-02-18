@@ -1,4 +1,4 @@
-// an object to make referencing user input easier??
+// temp hardcode to see format
 var userInputData = {
   keyword: 'concert',
   date: '2022-04-12T03:43:00Z',
@@ -8,16 +8,9 @@ var userInputData = {
 console.log(userInputData)
 
 // get event list using params
-function getEventList () {
-  //JSON.stringify(userInputData);
-
-  // stop reload [CURRENTLY NOT WORKING]
-  //$("#event-search-btn").click(function(event) {
-    //event.preventDefault();
-  //});
-
-  // display search results
-  $('#event-panel').show();
+function searchEvents () {
+  //stop page from refreshing
+  //event.preventDefault();
 
   // temp hardcoded data to render eventList
   $.ajax({
@@ -26,11 +19,8 @@ function getEventList () {
     async:true,
     dataType: "json",
     success: function(json) {
-                getEventList.json = json;
+                searchEvents.json = json;
                 displayEventList(json);
-
-                // Parse the response.
-                // Do other things.
              },
     error: function(xhr, status, err) {
                 console.log(error);
@@ -39,8 +29,8 @@ function getEventList () {
 
 };
 
-
-getEventList();
+//since hardcoded, this is needed to display API data
+searchEvents();
 
 // display event list
 function displayEventList (json) {
@@ -56,22 +46,23 @@ function displayEventList (json) {
   for (var i=0;i<events.length;i++) {
     item.children('.list-item-heading').text(events[i].name);
     item.children('.list-item-info').text(events[i].dates.start.localDate);
+    //try looks for it but doesn't throw an error if its not available
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
     } catch (err) {
       console.log(err);
     }
     item.show();
-    // item.off("click"); // don't need this
-    // item.click(events[i], function(eventObject) {
-    //   console.log(eventObject.data);
-    //   try {
-    //     getAttraction(eventObject.data._embedded.attractions[0].id);
-    //   } catch (err) {
-    //   console.log(err);
-    //   }
-    // });
-    item=item.next();
+    //item.off("click"); // don't need this???
+    item.click(events[i], function(eventObject) {
+      console.log(eventObject.data);
+      // try {
+      //   getAttraction(eventObject.data._embedded.attractions[0].id);
+      // } catch (err) {
+      // console.log(err);
+      // }
+    });
+    item = item.next(); //next matching element replaced here
   }
   //create new elements for display
   //don't forget error handling

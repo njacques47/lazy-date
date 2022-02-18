@@ -1,8 +1,20 @@
 body {
   margin: 0;
+  background: linear-gradient(#2c3cf0, #c7cbf5);
+
 }
 
+nav ul li a {
+  color: #dce7f5;
+}
 
+h3 {
+  color: #dce7f5;
+}
+
+footer {
+  padding-top: 50px;
+}
 
 .vl {
   border-left: 6px solid eff3e3;
@@ -25,8 +37,39 @@ body {
 } */
 
 .user-interface {
-  background-color: #eff3e3;
-  border-color: 6px solid red;
+  
+  border-radius: 4%;
   /* display: flex; */
+}
+
+.title-background {
+  background: linear-gradient(#f83434, #2c3cf0);
+  color: #eff3e3;
+}
+
+.top-bar {
+  background: #2c3cf0;
+}
+
+.navbar {
+  background: #2c3cf0ea;
+  color: #dce7f5;
+}
+
+.navbar:hover {
+  background: #dce7f5;
+}
+
+.show-for-medium {
+  color: #dce7f5;
+}
+
+.th {
+  padding: 10px;
+}
+
+.thumbnail {
+  border-radius: 4%;
+  background: #dce7f5;
 }
 

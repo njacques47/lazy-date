@@ -55,15 +55,15 @@
         <form action="">
           <!-- search events -->
           <label class="label" for="event-search">Please select and event or artist</label>
-          <input type="search" name="event-search" id="keyword-entry" placeholder="events, artists, etc.">
+          <input type="search" name="event-search" id="keyword-entry" placeholder="events, artists, etc." value="concert">
 
           <!-- pick date for event -->
           <label class="label" for="date">Please select a date:</label>
-          <input type="datetime-local" name="date" id="date-entry">
+          <input type="datetime-local" name="date" id="date-entry" value="">
 
           <!-- location search -->
           <label class="label" for="location">Enter zipcode to search:</label>
-          <input type="text" name="location" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry" />
+          <input type="text" name="location" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry" value="10001"/>
 
           <!-- button to submit/click event -->
           <button id="event-search-btn" type="submit" class="round button primary">Search</button>

@@ -23,12 +23,13 @@ section h4 {
 }
 
 footer {
-  padding-top: 50px;
+  padding: 20px;
 }
 
 footer h5 {
   font-family: Lobster;
 }
+
 
 .vl {
   border-left: 6px solid eff3e3;
@@ -36,10 +37,6 @@ footer h5 {
   position: absolute;
   left: 50%;
   top: 50;
-}
-
-img {
-  border-radius: 2%;
 }
 
 /* .split-left {
@@ -54,13 +51,19 @@ img {
   max-width: 45%;
 } */
 
+form h4, .user-interface h4 {
+  font-weight: bold;
+}
+
 .user-interface {
   
   border-radius: 4%;
+  padding: 20px;
   /* display: flex; */
 }
 
 .title-background {
+  padding-left: 20px;
   background: linear-gradient(#f83434, #2c3cf0);
   color: #eff3e3;
 }
@@ -70,6 +73,8 @@ img {
 }
 
 .navbar {
+  padding-left: 20px;
+  padding-right: 20px;
   background: #2c3cf0ea;
   color: #dce7f5;
 }

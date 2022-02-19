@@ -6,10 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- removed the twitter bootstrap that was here -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -52,18 +50,18 @@
 
       <!-- div for ticketmaster api -->
       <div id="event-form-container" class="">
-        <form action="">
+        <form id="form-submit" action="">
           <!-- search events -->
-          <label class="label" for="event-search">Please select and event or artist</label>
-          <input type="search" name="event-search" id="keyword-entry" placeholder="events, artists, etc.">
+          <label class="label" for="keyword">Please select and event or artist</label>
+          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, " value="sports">
 
           <!-- pick date for event -->
-          <label class="label" for="date">Please select a date:</label>
-          <input type="datetime-local" name="date" id="date-entry">
+          <!-- <label class="label" for="date">Please select a date (ps-time isn't important):</label>
+          <input type="date" name="startDateTime" id="date-entry"> -->
 
           <!-- location search -->
-          <label class="label" for="location">Enter zipcode to search:</label>
-          <input type="text" name="location" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry">
+          <label class="label" for="postalCode">Enter zipcode to search:</label>
+          <input type="text" name="postalCode" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry" value="10001">
 
           <!-- button to submit/click event -->
           <button id="event-search-btn" type="submit" class="round button primary">Search</button>
@@ -72,13 +70,25 @@
       </div>
 
       <!-- meals db api goes here -->
-      <div id="recipe-form-container" class="">
+      <div id="attractions-container">
+        <div class="modal-header card-divider">
+          <h5>Foundation Modals Suck😒</h5>
+          <i id="save-btn" class="fa-regular fa-floppy-disk"></i>
+        </div>
+        <img id="attraction-img" src="https://via.placeholder.com/1080x720/eee?text=max width of card" alt="" class="list-item-img">
+        <div class="modal-body card-section">
+          <span class="list-item-header">attraction panel</span>
+          <p class="list-item-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nostrum possimus molestiae, laboriosam
+            suscipit quaerat.
+          </p>
+        </div>
       </div>
       <!-- end user container -->
     </div>
 
     <!-- api results are rendered here -->
-    <div id="results-container" class="auto cell grid-x grid-padding-x grid-y grid-padding-y" style="height: 50vh;">
+    <div id="results-container" class="auto cell grid-x grid-padding-x grid-y grid-padding-y" style="height: 45vh;">
       <!-- events list renders here  -->
       <div id="event-panel" class="">
         <div class="panel-header">
@@ -87,9 +97,9 @@
 
         <div class="panel-body">
           <!-- parent item being referenced -->
-          <div id="event" class="list-group">
+          <div id="event" class="list-group grid-x">
             <!-- items inside the <a> get replaced -->
-            <a href="#" class="list-item" data-open="attraction-modal">
+            <a href="#" class="list-item cell" data-open="attraction-modal">
               <h4 class="list-item-heading">Event 1</h4>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
@@ -98,8 +108,8 @@
               </p>
               <p class="venue"> venue info gets populated here </p>
             </a>
-            <a href="#" class="list-item" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 2</h4>
+            <a href="#" class="list-item cell" data-open="attraction-modal">
+              <h4 class="list-item-heading">Event 1</h4>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
@@ -107,8 +117,8 @@
               </p>
               <p class="venue"> venue info gets populated here </p>
             </a>
-            <a href="#" class="list-item" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 3</h4>
+            <a href="#" class="list-item cell" data-open="attraction-modal">
+              <h4 class="list-item-heading">Event 1</h4>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
@@ -116,8 +126,8 @@
               </p>
               <p class="venue"> venue info gets populated here </p>
             </a>
-            <a href="#" class="list-item" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 4</h4>
+            <a href="#" class="list-item cell" data-open="attraction-modal">
+              <h4 class="list-item-heading">Event 1</h4>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
@@ -125,6 +135,7 @@
               </p>
               <p class="venue"> venue info gets populated here </p>
             </a>
+
           </div>
         </div>
         <!-- <div class="panel-footer">
@@ -132,34 +143,9 @@
         </div> -->
       </div>
 
-      <!-- attraction panel shows up as a modal -->
-      <div class="tiny reveal" id="attraction-modal" data-reveal>
-        <div class="modal-header">
-          <span>specific event HEADER GOES HERE</span>
-          <span class="save-btn">
-            <!-- add toggle if there's time -->
-            <i class="fa-regular fa-floppy-disk"></i>
-          </span>
-        </div>
-
-        <div class="modal-body">
-          <span class="list-item-header">attraction panel</span>
-          <img src="" alt="" class="list-item-img">
-          <p class="list-item-blurb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nostrum possimus molestiae, laboriosam
-            suscipit quaerat.
-          </p>
-        </div>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-    <!-- end results container -->
+      <!-- end results container -->
     </div>
   </section>
-
-
 
 
 
@@ -177,13 +163,8 @@
 
 
   <!-- all scripting here -->
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous">
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- add the js file here -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 

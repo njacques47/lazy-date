@@ -1,17 +1,19 @@
-// temp hardcode to see format
-var userInputData = {
-  keyword: 'concert',
-  date: '2022-04-12T03:43:00Z',
-  zipcode: '10001',
-}; 
-
-console.log(userInputData)
+//when this document is ready, do this
+$(document).ready(function() {
+  //make sure to update the form to have this id
+  $("#form-submit").submit(function(event) {
+    searchEvents(event);
+    //stop auto refresh
+    event.preventDefault();
+    
+  });
+  
+});
 
 // get event list using params
-function searchEvents () {
-  //stop page from refreshing
-  //event.preventDefault();
-
+function searchEvents (event) {
+  formData = $('form').serialize();
+  console.log(formData); //it works [add back up top--its getting passed thru via the event]--this allows us to see what's rendering
   // temp hardcoded data to render eventList
   $.ajax({
     type:"GET",
@@ -23,14 +25,13 @@ function searchEvents () {
                 displayEventList(json);
              },
     error: function(xhr, status, err) {
-                console.log(error);
+                alert("err"); //temp
              }
   });
 
 };
 
-//since hardcoded, this is needed to display API data
-searchEvents();
+
 
 // display event list
 function displayEventList (json) {
@@ -54,26 +55,44 @@ function displayEventList (json) {
     }
     item.show();
     //item.off("click"); // don't need this???
-    item.click(events[i], function(eventObject) {
-      console.log(eventObject.data);
-      // try {
-      //   getAttraction(eventObject.data._embedded.attractions[0].id);
-      // } catch (err) {
-      // console.log(err);
-      // }
+    item.click(events[i].id, function(eventObject) {
+      //successful return of the request provides event details & calls to 
+      id = eventObject.data;
+      console.log(id);
+      $.ajax({
+        type:"GET",
+        url:"https://app.ticketmaster.com/discovery/v2/events/" + eventObject.data + ".json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0",
+        async:true,
+        dataType: "json",
+        success: function(json) {
+              eventObject.json = json;
+              showEventDetails(json);
+             },
+        error: function(xhr, status, err) {
+              console.log("get attraction error");
+             }
+      });
     });
     item = item.next(); //next matching element replaced here
   }
-  //create new elements for display
-  //don't forget error handling
+};
 
-  //display relevant data using modal here??
-}
-// get specific event/attraction using id parameter 
 
 // show event details
+function showEventDetails(json) {
+  console.log(json); // it works! now use details to populate eventDetails or 
+  var items = $("#attractions-container");
+  items.hide();
+
+// check img for 
+  $("#attraction-img")
+
+};
+
+//showAttraction();
+
+
 
 // save event 
 
-//hopefully this makes the modal work
-//$(document).foundation();
+searchEvents();

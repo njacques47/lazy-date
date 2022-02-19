@@ -8,3 +8,7 @@ As a USER, I want to be able to quickly pull up a date idea. When I use the webs
 - ability to filter search based on family friendly rating
 
 ## Deployed Links
+
+### Resources Used
+NJ
+- https://www.w3resource.com/zurb-foundation3/reveal.php

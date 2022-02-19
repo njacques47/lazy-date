@@ -41,12 +41,14 @@ function displayEventList (json) {
 
   //create a variable reference to interact with the returned data
   var events = json._embedded.events;
+  console.log(json)
   var item = items.first(); //first matching elements
 
   //loop through data to display
   for (var i=0;i<events.length;i++) {
     item.children('.list-item-heading').text(events[i].name);
     item.children('.list-item-info').text(events[i].dates.start.localDate);
+
     //try looks for it but doesn't throw an error if its not available
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
@@ -55,23 +57,27 @@ function displayEventList (json) {
     }
     item.show();
     //item.off("click"); // don't need this???
+
+    
     item.click(events[i].id, function(eventObject) {
+
+      
       //successful return of the request provides event details & calls to 
-      id = eventObject.data;
-      console.log(id);
-      $.ajax({
-        type:"GET",
-        url:"https://app.ticketmaster.com/discovery/v2/events/" + eventObject.data + ".json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0",
-        async:true,
-        dataType: "json",
-        success: function(json) {
-              eventObject.json = json;
-              showEventDetails(json);
-             },
-        error: function(xhr, status, err) {
-              console.log("get attraction error");
-             }
-      });
+      // id = eventObject.data;
+      // console.log(id);
+      // $.ajax({
+      //   type:"GET",
+      //   url:"https://app.ticketmaster.com/discovery/v2/events/" + eventObject.data + ".json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0",
+      //   async:true,
+      //   dataType: "json",
+      //   success: function(json) {
+      //         eventObject.json = json;
+      //         showEventDetails(json);
+      //        },
+      //   error: function(xhr, status, err) {
+      //         console.log("get attraction error");
+      //        }
+      // });
     });
     item = item.next(); //next matching element replaced here
   }
@@ -80,9 +86,11 @@ function displayEventList (json) {
 
 // show event details
 function showEventDetails(json) {
-  console.log(json); // it works! now use details to populate eventDetails or 
+  console.log("Event details loaded!", json); // it works! now use details to populate eventDetails or suggested events!
   var items = $("#attractions-container");
   items.hide();
+
+  //use json to populate name, img
 
 // check img for 
   $("#attraction-img")

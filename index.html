@@ -69,14 +69,13 @@
         <!--  -->
       </div>
 
-      <!-- meals db api goes here -->
-      <div id="attractions-container">
+      <!-- SAVED ITEMS goes here -->
+      <div id="suggested-">
         <div class="modal-header card-divider">
-          <h5>Foundation Modals Suck😒</h5>
-          <i id="save-btn" class="fa-regular fa-floppy-disk"></i>
+          <h5>Saved Items Go Here😒</h5>
         </div>
-        <img id="attraction-img" src="https://via.placeholder.com/1080x720/eee?text=max width of card" alt="" class="list-item-img">
-        <div class="modal-body card-section">
+      
+        <div id="saved-items" class="card-section">
           <span class="list-item-header">attraction panel</span>
           <p class="list-item-info">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nostrum possimus molestiae, laboriosam
@@ -89,52 +88,68 @@
 
     <!-- api results are rendered here -->
     <div id="results-container" class="auto cell grid-x grid-padding-x grid-y grid-padding-y" style="height: 45vh;">
+
       <!-- events list renders here  -->
       <div id="event-panel" class="">
         <div class="panel-header">
-          <span class="">Events Today:</span>
+          <h3 class="">Events Happening:</h3>
         </div>
 
         <div class="panel-body">
           <!-- parent item being referenced -->
           <div id="event" class="list-group grid-x">
-            <!-- items inside the <a> get replaced -->
-            <a href="#" class="list-item cell" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 1</h4>
+            <!-- items inside here get replaced -->
+            <div class="list-item cell" >
+              <h5 class="list-item-heading">Event 1</h5>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
                 alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
               </p>
               <p class="venue"> venue info gets populated here </p>
-            </a>
-            <a href="#" class="list-item cell" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 1</h4>
+              <button id="get-tickets" class="round button primary">Get Tickets</button>
+              <button class="save-btn round button primary"><i id="save-btn" class="fa-regular fa-floppy-disk"></i></button>
+            </div>
+            <div class="list-item cell" >
+              <h5 class="list-item-heading">Event 1</h5>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
                 alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
               </p>
               <p class="venue"> venue info gets populated here </p>
-            </a>
-            <a href="#" class="list-item cell" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 1</h4>
+              <button class="get-tickets round button primary">Get Tickets</button>
+            </div>
+            <div class="list-item cell" >
+              <h5 class="list-item-heading">Event 1</h5>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
                 alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
               </p>
               <p class="venue"> venue info gets populated here </p>
-            </a>
-            <a href="#" class="list-item cell" data-open="attraction-modal">
-              <h4 class="list-item-heading">Event 1</h4>
+              <button class="get-tickets round button primary">Get Tickets</button>
+            </div>
+            <div class="list-item cell" >
+              <h5 class="list-item-heading">Event 1</h5>
               <p class="list-item-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
                 iure
                 alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
               </p>
               <p class="venue"> venue info gets populated here </p>
-            </a>
+              <button class="get-tickets round button primary">Get Tickets</button>
+            </div>
+            <div class="list-item cell" >
+              <h5 class="list-item-heading">Event 1</h5>
+              <p class="list-item-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                iure
+                alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+              </p>
+              <p class="venue"> venue info gets populated here </p>
+              <button class="get-tickets round button primary">Get Tickets</button>
+            </div>
 
           </div>
         </div>

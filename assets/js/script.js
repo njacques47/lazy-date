@@ -1,10 +1,11 @@
-var outButtonEl = document.querySelector("#outButton");
+//var outButtonEl = document.querySelector("#outButton");
 var startEl = document.querySelector("#start");
 var inButtonEl = document.querySelector("#inButton");
 var eventFormEl = document.querySelector("#eventForm")
 var fetchTicketsEl = document.querySelector("#searchButton");
 var EventSearchInput = document.querySelector("#eventSearch");
 var dateInput = document.querySelector("#eventDate");
+var hideDivEl = document.querySelector("#hide")
 var randomMeal = $("#mealResults");
 var recipeHistoryEl = $("#recipeHistory")
 var favButtonEl = $("#favButton");
@@ -31,6 +32,9 @@ event.preventDefault();
 
 function getRecipesApi(event) {
   event.preventDefault();
+
+  hideDivEl.classList.add("hide");
+  
   fetch(requestMealUrl)
       .then(function(response) {
           return response.json();
@@ -49,11 +53,11 @@ function getRecipesApi(event) {
             var h3 = $("<h3>")
             h3.text(recipeName)
             randomMeal.append(h3)
-            var img = $("<img class='shrink' src=" + recipeImage + ">")
+            var img = $("<img class='thumbnail' src=" + recipeImage + ">")
             randomMeal.append(img)
-            var a1 = $("<a href=" + recipeSource + ">Source</a>")
+            var a1 = $("<a class='button primary' href=" + recipeSource + ">Source</a>")
             randomMeal.append(a1)
-            var a2 = $("<a href=" + mealVideo + ">Video</a>")
+            var a2 = $("<a class='button primary' href=" + mealVideo + ">Video</a>")
             randomMeal.append(a2)
 
             var intro = $("<h3>")
@@ -62,7 +66,7 @@ function getRecipesApi(event) {
             for (var i = 0; i < savedMeal.length; i++) {
               var mealArray = savedMeal[i].mealName;
               var sourceArray = savedMeal[i].mealSource;         
-              var li = $("<a href='" + sourceArray + "'>" + mealArray + "</a>" + "<br>")
+              var li = $("<li><a href='" + sourceArray + "'>" + mealArray + "</a>" + "<br></li>")
               recipeHistoryEl.append(li);
             }
             var mealAdd = {
@@ -75,11 +79,9 @@ function getRecipesApi(event) {
           }  
             localStorage.setItem("savedMeal", JSON.stringify(savedMeal));
             }
-
-           console.log(savedMeal);
         });
   }
-  
-outButtonEl.addEventListener('click', eventChoice);
+
+//outButtonEl.addEventListener('click', eventChoice);
 inButtonEl.addEventListener('click', getRecipesApi);
 

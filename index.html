@@ -5,17 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Lazy Date</title>
 </head>
 
 <body>
   <header>
-    <h1 class="title-bar">
+    <h1 class="title-background">
       <!-- logo goes here -->
       LAZY DATE
+      
     </h1>
+   
+    
     <nav class="top-bar">
       <!-- navigation & ul goes here -->
       <ul class="dropdown menu">
@@ -33,17 +39,24 @@
 
 
   <!-- jumbotron for testamonials? not sold on this so we can revisit -->
-  <section class="grid-container text-center light-gray">
+  <section class="grid-container text-center">
     <h3>
-      Do you suck at planning dates? We got you covered!<br>
-        Let us help you impress the special someone in your life.
-      </h3>
+      Do you suck at planning dates? We got you covered!
+    </h3>
+
+    <h4 class="show-for-medium text-center">
+      Let us help you impress the special someone in your life.
+    </h4>
   </section>
 
   <div class="grid-y grid-y-padding medium-grid-frame">
     <div class="user-interface grid-x grid-padding-x grid-padding-y">
       <div class="cell thumbnail small-12 medium-12 large-6 grid">
-        <form action="">
+
+        <!-- form for going out and selecting an event-->
+
+        <form class="form-out" action="">
+          <h4 class="">Night out? Search for events by date and location here!</h4>
           <!-- search events -->
           <label class="label" for="event-search">Please select and event or artist</label>
           <input id="eventSearch" type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
@@ -57,26 +70,40 @@
           <input id="eventLocation" type="text" name="location" placeholder="city, state OR zipcode" />
 
             <!-- button to submit/click event -->
-            <button id="search-btn" type="submit" class="round button primary">Search</button>
+
+            <button id="search-btn" type="submit" class="round button">Search</button>
 
         </form>
+
+        <!-- form for staying in and making a meal-->
+
+        <form class="" action="">
+          <h4 class="">Night in? Search for meal recipies below to make at home.</h4>
+          <!-- search meals -->
+          <label class="label " for="event-search">Please select a meal</label>
+          <input type="search" name="event-search" id="meal-search" placeholder="meals, steak, pasta">
+            <!-- button to submit/click event -->
+            <button type="submit" class="round button ">Search</button>
+
+        </form>
+
       </div>
       
-      <div class="vl grid-padding-x">
+      <div class="vl grid-padding-x grid-padding-y">
         <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
       </div>
     
       <div class="cell thumbnail small-12 medium-12 large-6">
         <!-- where the api content gets rendered -->
         <div class="media-object grid-padding-x">
-          <div class="results-container media-object-section column">
+          <div class="results-container media-object-section ">
             <!-- rendered image goes here -->
             <div class="cell small-3 responsive-embed ">
-              <img class="th" src="https://via.placeholder.com/350x250" alt="">
+              <img class="th" src="https://via.placeholder.com/250x200" alt="">
             </div>  
           </div>
       
-          <div class="cell small-9 results-summary media-object-section column">
+          <div class="cell small-9 results-summary media-object-section ">
             <!-- either a blurb about the event or instructions -->
             <h4 class="text-center">Placeholder Event Title Here</h3>
             <p class="text-center">
@@ -96,17 +123,20 @@
     </div>
 
   </div>
+  <br>
+  <br>
 
 
-  <footer class="title-bar">
+  <footer class=" grid-padding-x grid-padding-y">
     <!-- footer -->
-    <div class="footer-elements" id="saved">
+    <div class="mobile-bottom-bar footer-elements" id="saved">
       <!-- render saved items here???? -->
     </div>
 
     <div class="footer-elements" id="about">
       <!-- blurb about the project here? -->
     </div>
+    <h5>Thank you for visiting and enjoy your date! <div class="heart"></div> </h5>
   </footer>
 
 

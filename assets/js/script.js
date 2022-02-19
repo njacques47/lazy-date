@@ -6,6 +6,7 @@ var fetchTicketsEl = document.querySelector("#searchButton");
 var EventSearchInput = document.querySelector("#eventSearch");
 var dateInput = document.querySelector("#eventDate");
 var hideDivEl = document.querySelector("#hide")
+var testingEl = $("#testing")
 var randomMeal = $("#mealResults");
 var recipeHistoryEl = $("#recipeHistory")
 var favButtonEl = $("#favButton");
@@ -50,17 +51,17 @@ function getRecipesApi(event) {
             var recipeSource = meal[i].strSource;
             var mealVideo = meal[i].strYoutube;
 
-            var h3 = $("<h3>")
+            var h3 = $("<h3 class= 'black'>")
             h3.text(recipeName)
             randomMeal.append(h3)
-            var img = $("<img class='thumbnail' src=" + recipeImage + ">")
+            var img = $("<img class='thumbnail' src=" + recipeImage + "><br>")
             randomMeal.append(img)
-            var a1 = $("<a class='button primary' href=" + recipeSource + ">Source</a>")
-            randomMeal.append(a1)
+            var a1 = $("<a class='button primary' href=" + recipeSource + ">Source</a><br>")
+            testingEl.append(a1)
             var a2 = $("<a class='button primary' href=" + mealVideo + ">Video</a>")
-            randomMeal.append(a2)
+            testingEl.append(a2)
 
-            var intro = $("<h3>")
+            var intro = $("<h3 class= 'black'>")
             intro.text("Previous Recipes")
             recipeHistoryEl.append(intro)
             for (var i = 0; i < savedMeal.length; i++) {

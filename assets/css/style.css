@@ -18,6 +18,16 @@ h3 {
   color: #dce7f5;
 }
 
+.black {
+  color: black;
+}
+
+.row {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
 section h4 {
   font-family: Lobster;
 }

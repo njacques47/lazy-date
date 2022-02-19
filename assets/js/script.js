@@ -1,4 +1,4 @@
-var fetchTicketsEl = document.querySelector("#searchButton");
+var fetchTicketsEl = document.querySelector("#search-btn");
 var EventSearchInput = document.querySelector("#eventSearch");
 var dateInput = document.querySelector("#eventDate");
 var locationInput = document.querySelector("#eventLocation")
@@ -14,9 +14,5 @@ event.preventDefault();
 
     localStorage.setItem("user", JSON.stringify(user));
 }
-
-    console.log(user.eventSearch)
-    console.log(user.date);
-    console.log(user.location);
 
 fetchTicketsEl.addEventListener("click", saveEvents);

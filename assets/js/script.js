@@ -3,6 +3,7 @@ var startEl = document.querySelector("#start");
 var inButtonEl = document.querySelector("#inButton");
 var eventFormEl = document.querySelector("#eventForm")
 var fetchTicketsEl = document.querySelector("#searchButton");
+
 var EventSearchInput = document.querySelector("#eventSearch");
 var dateInput = document.querySelector("#eventDate");
 var hideDivEl = document.querySelector("#hide")
@@ -85,4 +86,3 @@ function getRecipesApi(event) {
 
 //outButtonEl.addEventListener('click', eventChoice);
 inButtonEl.addEventListener('click', getRecipesApi);
-

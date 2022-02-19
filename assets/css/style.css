@@ -2,6 +2,7 @@ body {
   margin: 0;
   background: linear-gradient(#2c3cf0, #c7cbf5);
 
+
 }
 
 h1 {
@@ -16,6 +17,17 @@ nav ul li a {
 h3 {
   font-family: Lobster;
   color: #dce7f5;
+}
+
+.black {
+  color: black;
+}
+
+.row {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+
 }
 
 section h4 {
@@ -44,7 +56,6 @@ footer h5 {
   float: left;
   max-width: 45%;
 }
-
 .split-right {
   display: flex;
   float: right;
@@ -94,6 +105,7 @@ form h4, .user-interface h4 {
 .thumbnail {
   border-radius: 4%;
   background: #dce7f5;
+  width: 50%;
 }
 
 .heart { 
@@ -119,5 +131,8 @@ form h4, .user-interface h4 {
   left: 0; 
   transform: rotate(45deg); 
   transform-origin :100% 100%; 
+}
+.shrink {
+  width: 50%;
 }
 

@@ -8,8 +8,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https:kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
   <title>Lazy Date</title>
 </head>
 
@@ -17,7 +23,7 @@
   <header>
     <h1 class="title-background">
       <!-- logo goes here -->
-      LAZY DATE
+      <a class="title-background" href="./index.html">LAZY DATE</a>
       
     </h1>
    
@@ -50,7 +56,7 @@
   </section>
 
   <div class="grid-y grid-y-padding medium-grid-frame">
-    <div class="user-interface grid-x grid-padding-x grid-padding-y">
+    <div class="user-interface grid-x grid-padding-x grid-padding-y grid-container">
       <div class="cell thumbnail small-12 medium-12 large-6 grid">
 
         <!-- form for going out and selecting an event-->
@@ -70,8 +76,7 @@
           <input id="eventLocation" type="text" name="location" placeholder="city, state OR zipcode" />
 
             <!-- button to submit/click event -->
-
-            <button id="search-btn" type="submit" class="round button">Search</button>
+            <button type="submit" class="round button">Search</button>
 
         </form>
 
@@ -80,10 +85,8 @@
         <form class="" action="">
           <h4 class="">Night in? Search for meal recipies below to make at home.</h4>
           <!-- search meals -->
-          <label class="label " for="event-search">Please select a meal</label>
-          <input type="search" name="event-search" id="meal-search" placeholder="meals, steak, pasta">
             <!-- button to submit/click event -->
-            <button type="submit" class="round button ">Search</button>
+            <button id="inButton" type="submit" class="round button ">Search</button>
 
         </form>
 
@@ -99,14 +102,14 @@
           <div class="results-container media-object-section ">
             <!-- rendered image goes here -->
             <div class="cell small-3 responsive-embed ">
-              <img class="th" src="https://via.placeholder.com/250x200" alt="">
+              <img id="hide" class="th" src="https://via.placeholder.com/250x200" alt="">
             </div>  
           </div>
-      
-          <div class="cell small-9 results-summary media-object-section ">
+      <div>
+          <div id="mealResults" class="cell small-9 results-summary media-object-section ">
             <!-- either a blurb about the event or instructions -->
-            <h4 class="text-center">Placeholder Event Title Here</h3>
-            <p class="text-center">
+            <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
+            <p id="hide" class="text-center">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
               cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis, aperiam.
               Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus asperiores
@@ -116,7 +119,14 @@
             </p>
             <!-- youtube link goes here?? -->
           </div>
+          <div id="testing" class="row">
 
+          </div>
+      </div>
+
+          <div>
+            <ul  id="recipeHistory"></ul>
+          </div>
         </div>
       </div>
 
@@ -132,7 +142,10 @@
     <div class="mobile-bottom-bar footer-elements" id="saved">
       <!-- render saved items here???? -->
     </div>
+    <div class="footer-elements">
 
+      <!-- render saved items here???? -->
+    </div>
     <div class="footer-elements" id="about">
       <!-- blurb about the project here? -->
     </div>

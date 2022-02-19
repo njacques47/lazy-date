@@ -2,7 +2,9 @@
 $(document).ready(function() {
   //make sure to update the form to have this id
   $("#form-submit").submit(function(event) {
-    searchEvents(event);
+    function searchEvents(event) {
+      $('form').serialize();
+    };
     //stop auto refresh
     event.preventDefault();
     
@@ -12,12 +14,9 @@ $(document).ready(function() {
 
 // get event list using params
 function searchEvents (event) {
-  formData = $('form').serialize();
-  console.log(formData); //it works [add back up top--its getting passed thru via the event]--this allows us to see what's rendering
-  // temp hardcoded data to render eventList
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&keyword=concert&postalCode=10001&locale=*&startDateTime=2022-04-12T03:43:00Z",
+    url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7",
     async:true,
     dataType: "json",
     success: function(json) {
@@ -58,7 +57,7 @@ function displayEventList (json) {
     item.show();
     //item.off("click"); // don't need this???
 
-    
+
     item.click(events[i].id, function(eventObject) {
 
       

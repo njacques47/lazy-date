@@ -29,4 +29,6 @@ body {
   border-color: 6px solid red;
   /* display: flex; */
 }
-
+.shrink {
+  width: 50%;
+}

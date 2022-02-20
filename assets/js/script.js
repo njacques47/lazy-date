@@ -45,6 +45,7 @@ function getRecipesApi(event) {
           var meal = mealData.meals;
 
           randomMeal.empty();
+          testingEl.empty();
           recipeHistoryEl.empty();
           for (var i = 0; i < meal.length; i++) {
             var recipeName = meal[i].strMeal;

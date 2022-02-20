@@ -1,25 +1,27 @@
 
 //this isn't working.....yet
-var error = function() {
-  $("#event-form-container").effect("shake");
-};
+//var error = function() {
+  //$("#event-form-container").effect("shake");
+//};
 
 //when this document is ready, do this
 $(document).ready(function() {
   //make sure to update the form to have this id
   $("#form-submit").submit(function(event) {
+    event.preventDefault();
+    formData = $("#form-submit").serialize();
     function searchEvents(event) {
-      formData = $("form").serialize();
+      formData;
     };
     $("#event-panel").show();
     //stop auto refresh
-    event.preventDefault();
+    
     
   }); 
 });
 
 // get event list using params
-function searchEvents (event) {
+function searchEvents (event, formData) {
   $.ajax({
     type:"GET",
     url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7",
@@ -68,5 +70,11 @@ function displayEventList (json) {
     item = item.next(); //next matching element replaced here
   }
 }; 
+
+//reset form for new entries
+$("#form-reset-btn").click(function () {
+  $("#form-submit")[0].reset();
+  return false;
+});
 
 searchEvents();

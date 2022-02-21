@@ -59,16 +59,6 @@ footer h5 {
   top: 50;
 }
 
-/* .split-left {
-  display: flex;
-  float: left;
-  max-width: 45%;
-}
-.split-right {
-  display: flex;
-  float: right;
-  max-width: 45%;
-} */
 
 form h4, .user-interface h4 {
   font-weight: bold;
@@ -142,4 +132,14 @@ form h4, .user-interface h4 {
 }
 .shrink {
   width: 50%;
+}
+
+#event-api-error, #event-panel {
+  display: none;
+}
+
+#event-api-error {
+  text-align: center;
+  border: 3px solid red;
+  padding-top: 15px;
 }

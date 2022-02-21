@@ -1,6 +1,5 @@
 var eventErrorHandle = function() {
   $("#results-container").append("<div><p>Yikes! Try a new entry for accurate results!</p></div>");
-  $("#event-panel").hide();
 }
 
 //when this document is ready, do this
@@ -10,7 +9,6 @@ $(document).ready(function() {
     event.preventDefault();
     var formData = $("#form-submit").serialize();
     searchEvents(formData);
-    $("#event-panel").show();
     
   }); 
 });
@@ -18,22 +16,29 @@ $(document).ready(function() {
 
 // get event list using params from user inputs
 function searchEvents (formData) {
-  $.ajax({
-    type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7&" + formData,
-    async:true,
-    dataType: "json",
-    success: function(json) {
-                searchEvents.json = json;
-                displayEventList(json);
-                console.log(json)
-                $("#form-submit")[0].reset();
-             },
-    error: function(xhr, status, err) {
-                eventErrorHandle(err)
-             }
-  });
-
+  if (formData === "keyword=&postalCode="){
+    eventErrorHandle();
+    console.log(formData);
+  } else {
+    $("#event-panel").show();
+    $.ajax({
+      type:"GET",
+      url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7&" + formData,
+      async:true,
+      dataType: "json",
+      success: function(json) {
+                  searchEvents.json = json;
+                  displayEventList(json);
+                  console.log(json)
+                  $("#form-submit")[0].reset();
+               },
+      error: function(xhr, status, err) {
+                  eventErrorHandle(err)
+               }
+    });
+  
+  }
+  
 };
 
 

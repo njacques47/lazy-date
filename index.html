@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
     crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
+  <script src="https:kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <title>Lazy Date</title>
 </head>
 
@@ -59,28 +59,23 @@
       <div class="cell thumbnail small-12 medium-12 large-6 grid">
 
         <!-- form for going out and selecting an event-->
-
-        <form class="form-out" action="">
+        <form id="form-submit" class="form-out" action="">
           <button class="fa fa-refresh" href="./index.html"></button>
           <h4 class="">Night out? Search for events by date and location here!</h4>
           <!-- search events -->
-          <label class="label" for="event-search">Please select an event</label>
-          <input id="eventSearch" type="search" name="event-search" id="event-search"
-            placeholder="Sports, Music or Arts">
+          <label class="label validate-event" for="keyword">Please select and event or artist</label>
+          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, ">
 
-          <!-- enter location for the event by city/state OR zipcode -->
-          <label class="label" for="location">Please enter your desired location</label>
-          <input id="eventLocation" type="text" name="location" placeholder="Enter zipcode to search:" />
-          <div id="event-api-error" class="hide">
-            <p>Yikes! Try another input for results!</p>
-          </div>
+          <!-- enter location for the event by zipcode -->
+          <label class="label" for="postalCode">Enter zipcode to search:</label>
+          <input type="text" name="postalCode" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry">
+
           <!-- button to submit/click event -->
           <button type="submit" class="round button">Search</button>
 
         </form>
 
         <!-- form for staying in and making a meal-->
-
         <form class="" action="">
           <h4 class="">Night in? Search for meal recipies below to make at home.</h4>
           <!-- search meals -->
@@ -88,62 +83,105 @@
           <button id="inButton" type="submit" class="round button ">Search</button>
 
         </form>
-
       </div>
 
       <div class="vl grid-padding-x grid-padding-y">
         <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
       </div>
-      <!-- TICKETMASTER API RESULTS PANEL -->
+
       <div class="cell thumbnail small-12 medium-12 large-6">
-        <!-- where the api content gets rendered -->
-        <div>
-          <div id="mealResults" class="cell small-9 results-summary media-object-section ">
-            <!-- either a blurb about the event or instructions -->
-            <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
-              <p id="hide" class="text-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
-                cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis,
-                aperiam.
-                Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus
-                asperiores
-                cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus
-                molestiae
-                obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
-                repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
-              </p>
+        <!-- TICKETMASTER API RESULTS PANEL -->
+        <div id="event-api-error">
+          <p>Yikes! Try another input for results!</p>
+        </div>
+        <div id="event-panel" class="">
+          <div class="panel-header">
+            <h4 class="">Events Happening:</h4>
           </div>
-          <div id="testing" class="row"></div>
-          <div>
-            <ul id="recipeHistory"></ul>
-          </div>
-          <div id="event-panel" class="">
-            <div class="panel-header">
-              <h4 class="">Events Happening:</h4>
-            </div>
-            <div class="panel-body">
-              <!-- parent item being referenced -->
-              <div id="event" class="list-group grid-x">
-                <!-- items inside here get replaced -->
-                <div class="list-item cell">
-                  <h5 class="list-item-heading">Event 1</h5>
-                  <p class="list-item-info">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
-                    iure
-                    alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
-                  </p>
-                  <p class="venue"> venue info gets populated here </p>
-                  <a class="get-tickets round button primary" href="" target="_blank" rel="noreferrer noopener">Get
-                    Tickets</a>
-                </div>
+          <div class="panel-body">
+            <!-- parent item being referenced -->
+            <div id="event" class="list-group grid-x">
+              <!-- items inside here get replaced -->
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
               </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+
             </div>
           </div>
         </div>
+        <div id="placeholder-content" class="media-object grid-padding-x">
+            <div class="results-container media-object-section ">
+  
+              <div class="cell small-3 responsive-embed ">
+                <img id="hide" class="th" src="https://via.placeholder.com/250x200" alt="">
+              </div>
+            </div>
+            <div>
+              <div id="mealResults" class="cell small-9 results-summary media-object-section ">
+  
+                <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
+                  <p id="hide" class="text-center">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+                    cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis,
+                    aperiam.
+                    Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus
+                    asperiores
+                    cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus
+                    molestiae
+                    obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+                    repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+                  </p>
+              </div>
+              <div id="testing" class="row"></div>
+              <div>
+                <ul id="recipeHistory"></ul>
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 
   </div>
   <br>
@@ -153,13 +191,14 @@
   <footer class=" grid-padding-x grid-padding-y">
     <!-- footer -->
     <div class="mobile-bottom-bar footer-elements" id="saved">
-      <!-- render saved items here???? -->
+
     </div>
     <div class="footer-elements">
-      <!-- render saved items here???? -->
+
+
     </div>
     <div class="footer-elements" id="about">
-      <!-- blurb about the project here? -->
+
     </div>
     <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
     </h5>

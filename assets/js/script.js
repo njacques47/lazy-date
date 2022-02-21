@@ -1,8 +1,7 @@
-
-//this isn't working.....yet
-//var error = function() {
-  //$("#event-form-container").effect("shake");
-//};
+var eventErrorHandle = function() {
+  $("#results-container").append("<div><p>Yikes! Try a new entry for accurate results!</p></div>");
+  $("#event-panel").hide();
+}
 
 //when this document is ready, do this
 $(document).ready(function() {
@@ -17,7 +16,7 @@ $(document).ready(function() {
 });
 
 
-// get event list using params
+// get event list using params from user inputs
 function searchEvents (formData) {
   $.ajax({
     type:"GET",
@@ -31,7 +30,7 @@ function searchEvents (formData) {
                 $("#form-submit")[0].reset();
              },
     error: function(xhr, status, err) {
-                alert("Search Event error");
+                eventErrorHandle(err)
              }
   });
 
@@ -69,10 +68,3 @@ function displayEventList (json) {
     item = item.next(); //next matching element replaced here
   }
 }; 
-
-//reset form for new entries
-// $("#form-reset-btn").click(function () {
-//   $("#form-submit")[0].reset();
-// });
-
-//searchEvents();

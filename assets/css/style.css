@@ -2,7 +2,6 @@ body {
   margin: 0;
   background: linear-gradient(#2c3cf0, #c7cbf5);
 
-
 }
 
 h1 {
@@ -23,11 +22,20 @@ h3 {
   color: black;
 }
 
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .row {
   gap: 5px;
   display: flex;
   flex-direction: row;
-
 }
 
 section h4 {
@@ -135,4 +143,3 @@ form h4, .user-interface h4 {
 .shrink {
   width: 50%;
 }
-

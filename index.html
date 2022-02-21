@@ -5,28 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+    crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https:kit.fontawesome.com/39dae8128f.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <title>Lazy Date</title>
 </head>
 
 <body>
-  <header class="top-bar">
-    <h1 class="top-bar-left">
-      LAZY DATE
+  <header>
+    <h1 class="title-background">
+      <!-- logo goes here -->
+      <a class="title-background" href="./index.html">LAZY DATE</a>
+
     </h1>
-    <nav class="top-bar-right">
+
+
+    <nav class="top-bar">
       <!-- navigation & ul goes here -->
-      <ul class="menu">
-        <li class="">
+      <ul class="dropdown menu">
+        <li class="navbar">
           <!-- saved events/date ideas -->
-          <a href="#saved">Saved</a>
+          <a href="#saved">Saved Events</a>
         </li>
-        <li class="">
+        <li class="navbar">
           <!-- about the developers page -->
           <a href="#about">About</a>
         </li>
@@ -34,140 +42,175 @@
     </nav>
   </header>
 
-  <!-- tagline here -->
-  <section class="">
+
+  <!-- jumbotron for testamonials? not sold on this so we can revisit -->
+  <section class="grid-container text-center">
     <h3>
-      Do you suck at planning dates? We got you covered!<br>
-      Let us help you impress the special someone in your life.
+      Do you suck at planning dates? We got you covered!
     </h3>
+
+    <h4 class="show-for-medium text-center">
+      Let us help you impress the special someone in your life.
+    </h4>
   </section>
 
+  <div class="grid-y grid-y-padding medium-grid-frame">
+    <div class="user-interface grid-x grid-padding-x grid-padding-y grid-container">
+      <div class="cell thumbnail small-12 medium-12 large-6 grid">
 
-  <!-- main container that holds the body -->
-  <section class="content-container grid-x grid-padding-x">
-    <!-- user interface container (ticketmaster vs meals db area) -->
-    <div id="user-input-container" class="auto cell">
-
-      <!-- div for ticketmaster api -->
-      <div id="event-form-container" class="">
-        <form id="form-submit" action="">
+        <!-- form for going out and selecting an event-->
+        <form id="form-submit" class="form-out" action="">
+          <button class="fa fa-refresh" href="./index.html"></button>
+          <h4 class="">Night out? Search for events by date and location here!</h4>
           <!-- search events -->
           <label class="label validate-event" for="keyword">Please select and event or artist</label>
-          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, " >
+          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, ">
 
-          <!-- location search -->
-          <label class="label validate-event" for="postalCode">Enter zipcode to search:</label>
+          <!-- enter location for the event by zipcode -->
+          <label class="label" for="postalCode">Enter zipcode to search:</label>
           <input type="text" name="postalCode" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry">
 
           <!-- button to submit/click event -->
-          <button id="event-search-btn" type="submit" class="round button primary">Search</button>
-          <button id="reset-form-btn" type="submit" class="round button secondary">Reset</button>
+          <button type="submit" class="round button">Search</button>
+
         </form>
-        <!--  -->
+
+        <!-- form for staying in and making a meal-->
+        <form class="" action="">
+          <h4 class="">Night in? Search for meal recipies below to make at home.</h4>
+          <!-- search meals -->
+          <!-- button to submit/click event -->
+          <button id="inButton" type="submit" class="round button ">Search</button>
+
+        </form>
       </div>
 
-      <!-- SAVED ITEMS goes here -->
-      <div id="suggested-">
-        <div class="modal-header card-divider">
-          <h5>Saved Items Go Here😒</h5>
-        </div>
-      
-        <div id="saved-items" class="card-section">
-          <span class="list-item-header">attraction panel</span>
-          <p class="list-item-info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nostrum possimus molestiae, laboriosam
-            suscipit quaerat.
-          </p>
-        </div>
+      <div class="vl grid-padding-x grid-padding-y">
+        <!-- empty div to be styled as a vertical line to "separate" the interactive sides; left: search form vs right: rendered results -->
       </div>
-      <!-- end user container -->
-    </div>
 
-    <!-- api results are rendered here -->
-    <div id="results-container" class="auto cell grid-x grid-padding-x grid-y grid-padding-y" style="height: 45vh;">
-
-      <!-- events list renders here  -->
-      <div id="event-panel" class="" style="display: none;">
-        <div class="panel-header">
-          <h3 class="">Events Happening:</h3>
+      <div class="cell thumbnail small-12 medium-12 large-6">
+        <!-- TICKETMASTER API RESULTS PANEL -->
+        <div id="event-api-error">
+          <p>Yikes! Try another input for results!</p>
         </div>
+        <div id="event-panel" class="">
+          <div class="panel-header">
+            <h5 class="">Events Happening:</h5>
+          </div>
+          <div class="panel-body">
+            <!-- parent item being referenced -->
+            <div id="event" class="list-group grid-x">
+              <!-- items inside here get replaced -->
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
+              <div class="list-item cell">
+                <h5 class="list-item-heading">Event 1</h5>
+                <p class="list-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
+                  iure
+                  alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
+                </p>
+                <p class="venue"> venue info gets populated here </p>
+                <a class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get
+                  Tickets</a>
+              </div>
 
-        <div class="panel-body">
-          <!-- parent item being referenced -->
-          <div id="event" class="list-group grid-x">
-
-            <!-- items inside here get replaced -->
-            <div class="list-item cell" >
-              <h5 class="list-item-heading">Event 1</h5>
-              <p class="list-item-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
-                iure
-                alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
-              </p>
-              <p class="venue"> venue info gets populated here </p>
-              <a  class="get-tickets round button primary" href="" target="_blank" rel="noreferrer noopener">Get Tickets</a>
             </div>
-            <div class="list-item cell" >
-              <h5 class="list-item-heading">Event 1</h5>
-              <p class="list-item-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
-                iure
-                alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
-              </p>
-              <p class="venue"> venue info gets populated here </p>
-              <a  class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get Tickets</a>
-            </div>
-            <div class="list-item cell" >
-              <h5 class="list-item-heading">Event 1</h5>
-              <p class="list-item-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
-                iure
-                alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
-              </p>
-              <p class="venue"> venue info gets populated here </p>
-              <a  class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get Tickets</a>
-            </div>
-            <div class="list-item cell" >
-              <h5 class="list-item-heading">Event 1</h5>
-              <p class="list-item-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus molestias, ipsam itaque ad
-                iure
-                alias sit numquam quibusdam sint voluptatem optio repellat rem praesentium.
-              </p>
-              <p class="venue"> venue info gets populated here </p>
-              <a  class="get-tickets round button primary" href="#" target="_blank" rel="noreferrer noopener">Get Tickets</a>
-            </div>
-            
           </div>
         </div>
-        <!-- <div class="panel-footer">
-           pagination goes here; maybe a button for load more options and add scroll?
-        </div> -->
+        <div id="placeholder-content" class="media-object grid-padding-x">
+          <div class="results-container media-object-section ">
+
+            <div class="cell small-3 responsive-embed ">
+              <img id="hide" class="th" src="https://via.placeholder.com/250x200" alt="">
+            </div>
+          </div>
+          <div>
+            <div id="mealResults" class="cell small-9 results-summary media-object-section ">
+
+              <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
+                <p id="hide" class="text-center">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+                  cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis,
+                  aperiam.
+                  Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus
+                  asperiores
+                  cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus
+                  molestiae
+                  obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+                  repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+                </p>
+            </div>
+            <div id="testing" class="row">
+
+            </div>
+          </div>
+
+          <div>
+            <ul id="recipeHistory"></ul>
+          </div>
+        </div>
       </div>
 
-      <!-- end results container -->
     </div>
-  </section>
+
+  </div>
+  <br>
+  <br>
 
 
-
-
-  <footer class="title-bar">
+  <footer class=" grid-padding-x grid-padding-y">
     <!-- footer -->
-    <div class="footer-elements" id="saved">
-      <!-- render saved items here???? -->
-    </div>
+    <div class="mobile-bottom-bar footer-elements" id="saved">
 
-    <div class="footer-elements" id="about">
-      <!-- blurb about the project here? -->
     </div>
+    <div class="footer-elements">
+
+
+    </div>
+    <div class="footer-elements" id="about">
+
+    </div>
+    <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
+    </h5>
   </footer>
 
 
-  <!-- all scripting here -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- add the js file here -->
   <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

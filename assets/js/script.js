@@ -1,5 +1,7 @@
+var userInput = document.querySelector("form#from-submit input");
 var eventErrorHandle = function() {
-  $("#results-container").append("<div><p>Yikes! Try a new entry for accurate results!</p></div>");
+  $("#event-api-error").show()
+  $("#placeholder-content").hide();
 }
 
 //when this document is ready, do this
@@ -9,17 +11,18 @@ $(document).ready(function() {
     event.preventDefault();
     var formData = $("#form-submit").serialize();
     searchEvents(formData);
-    
+    $("#placeholder-content").hide();
   }); 
 });
 
 
 // get event list using params from user inputs
 function searchEvents (formData) {
-  if (formData === "keyword=&postalCode="){
+  if (userInput === "null" || userInput === "" || formData === "keyword=&postalCode="){
     eventErrorHandle();
     console.log(formData);
   } else {
+    console.log(formData)
     $("#event-panel").show();
     $.ajax({
       type:"GET",
@@ -29,11 +32,10 @@ function searchEvents (formData) {
       success: function(json) {
                   searchEvents.json = json;
                   displayEventList(json);
-                  console.log(json)
-                  $("#form-submit")[0].reset();
+                  //console.log(json)
                },
       error: function(xhr, status, err) {
-                  eventErrorHandle(err)
+                  eventErrorHandle();
                }
     });
   
@@ -61,7 +63,7 @@ function displayEventList (json) {
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
     } catch (err) {
-      alert("Display events venue error");
+      eventErrorHandle(err);
     }
     item.show();
 

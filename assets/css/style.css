@@ -1,12 +1,147 @@
-.content-container {
-  border: .3rem solid #00fdc8;
-  border-radius: 0px;
+body {
+  margin: 0;
+  background: linear-gradient(#2c3cf0, #c7cbf5);
+
+
 }
 
-#user-input-container, #results-container {
-  margin-top: 15px;
+h1 {
+  font-family: Lobster;
 }
 
-#attractions-container {
-  border: 2px solid;
+nav ul li a {
+  color: #dce7f5;
+}
+
+
+h3 {
+  font-family: Lobster;
+  color: #dce7f5;
+}
+
+.black {
+  color: black;
+}
+
+.row {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+section h4 {
+  font-family: Lobster;
+}
+
+footer {
+  padding: 20px;
+}
+
+footer h5 {
+  font-family: Lobster;
+}
+
+
+.vl {
+  border-left: 6px solid eff3e3;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 50;
+}
+
+/* .split-left {
+  display: flex;
+  float: left;
+  max-width: 45%;
+}
+.split-right {
+  display: flex;
+  float: right;
+  max-width: 45%;
+} */
+
+form h4, .user-interface h4 {
+  font-weight: bold;
+}
+
+.user-interface {
+  
+  border-radius: 4%;
+  padding: 20px;
+  /* display: flex; */
+}
+
+.title-background {
+  padding-left: 20px;
+  background: linear-gradient(#f83434, #2c3cf0);
+  color: #eff3e3;
+}
+
+.top-bar {
+  background: #2c3cf0;
+}
+
+.navbar {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #2c3cf0ea;
+  color: #dce7f5;
+}
+
+.navbar:hover {
+  background: #dce7f5;
+}
+
+.show-for-medium {
+  color: #dce7f5;
+}
+
+.th {
+  padding: 10px;
+}
+
+.thumbnail {
+  border-radius: 4%;
+  background: #dce7f5;
+  width: 50%;
+}
+
+.heart { 
+  position: relative; 
+  width: 100px; 
+  height: 90px; 
+} 
+
+.heart:before, .heart:after { 
+  position: absolute; 
+  content: ""; 
+  left: 50px; 
+  top: 0; 
+  width: 50px; 
+  height: 80px; 
+  background: red; 
+  border-radius: 50px 50px 0 0; 
+  transform: rotate(-45deg); 
+  transform-origin: 0 100%; 
+} 
+
+.heart:after { 
+  left: 0; 
+  transform: rotate(45deg); 
+  transform-origin :100% 100%; 
+}
+.shrink {
+  width: 50%;
+}
+
+#event-api-error, #event-panel {
+  display: none;
+}
+
+#event-api-error {
+  text-align: center;
+  border: 3px solid red;
+  padding-top: 15px;
 }

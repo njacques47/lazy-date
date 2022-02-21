@@ -9,30 +9,29 @@ $(document).ready(function() {
   //make sure to update the form to have this id
   $("#form-submit").submit(function(event) {
     event.preventDefault();
-    formData = $("#form-submit").serialize();
-    function searchEvents(event) {
-      formData;
-    };
+    var formData = $("#form-submit").serialize();
+    searchEvents(formData);
     $("#event-panel").show();
-    //stop auto refresh
-    
     
   }); 
 });
 
+
 // get event list using params
-function searchEvents (event, formData) {
+function searchEvents (formData) {
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7",
+    url:"https://app.ticketmaster.com/discovery/v2/events?apikey=B7SeHPlCAJjIFj2rmXfNVhHuwqaxGrA7&" + formData,
     async:true,
     dataType: "json",
     success: function(json) {
                 searchEvents.json = json;
                 displayEventList(json);
+                console.log(json)
+                $("#form-submit")[0].reset();
              },
     error: function(xhr, status, err) {
-                console.log(err);
+                alert("Search Event error");
              }
   });
 
@@ -58,7 +57,7 @@ function displayEventList (json) {
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
     } catch (err) {
-      console.log(err);
+      alert("Display events venue error");
     }
     item.show();
 
@@ -72,9 +71,8 @@ function displayEventList (json) {
 }; 
 
 //reset form for new entries
-$("#form-reset-btn").click(function () {
-  $("#form-submit")[0].reset();
-  return false;
-});
+// $("#form-reset-btn").click(function () {
+//   $("#form-submit")[0].reset();
+// });
 
-searchEvents();
+//searchEvents();

@@ -68,13 +68,9 @@
           <label class="label" for="event-search">Please select and event or artist</label>
           <input id="eventSearch" type="search" name="event-search" id="event-search" placeholder="events, artists, etc.">
 
-          <!-- pick date for event -->
-          <label class="label" for="date">Please select a date:</label>
-          <input id="eventDate" type="date" name="date" id="date">
-
-          <!-- enter location for the event by city/state OR zipcode -->
-          <label class="label" for="location">Please enter your desired location</label>
-          <input id="eventLocation" type="text" name="location" placeholder="city, state OR zipcode" />
+          <!-- enter location for the event by zipcode -->
+          <label class="label" for="postalCode">Enter zipcode to search:</label>
+          <input type="text" name="postalCode" pattern="[0-9]*" placeholder="zipcode" id="zipcode-entry">
 
             <!-- button to submit/click event -->
             <button type="submit" class="round button">Search</button>
@@ -98,17 +94,17 @@
       </div>
     
       <div class="cell thumbnail small-12 medium-12 large-6">
-        <!-- where the api content gets rendered -->
+
         <div class="media-object grid-padding-x">
           <div class="results-container media-object-section ">
-            <!-- rendered image goes here -->
+            
             <div class="cell small-3 responsive-embed ">
               <img id="hide" class="th" src="https://via.placeholder.com/250x200" alt="">
             </div>  
           </div>
       <div>
           <div id="mealResults" class="cell small-9 results-summary media-object-section ">
-            <!-- either a blurb about the event or instructions -->
+            
             <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
             <p id="hide" class="text-center">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
@@ -118,7 +114,6 @@
               obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
               repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
             </p>
-            <!-- youtube link goes here?? -->
           </div>
           <div id="testing" class="row">
 
@@ -141,14 +136,14 @@
   <footer class=" grid-padding-x grid-padding-y">
     <!-- footer -->
     <div class="mobile-bottom-bar footer-elements" id="saved">
-      <!-- render saved items here???? -->
+      
     </div>
     <div class="footer-elements">
 
-      <!-- render saved items here???? -->
+      
     </div>
     <div class="footer-elements" id="about">
-      <!-- blurb about the project here? -->
+      
     </div>
     <h5>Thank you for visiting and enjoy your date! <div class="heart"></div> </h5>
   </footer>

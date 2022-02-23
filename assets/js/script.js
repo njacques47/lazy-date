@@ -1,6 +1,7 @@
 var startEl = document.querySelector("#start");
 var inButtonEl = document.querySelector("#inButton");
 var fetchTicketsEl = document.querySelector("#searchButton");
+
 var testingEl = $("#testing")
 var randomMeal = $("#mealResults");
 var recipeHistoryEl = $(".recipeHistory")
@@ -63,12 +64,12 @@ function searchEvents(formData) {
     });
 
   }
-
 };
 
 
 // display event list
 function displayEventList(json) {
+
   //hide original text
   var items = $("#event .list-item")
   items.hide();
@@ -79,6 +80,7 @@ function displayEventList(json) {
 
   //loop through data to display
   for (var i = 0; i < events.length; i++) {
+
     item.children('.list-item-heading').text(events[i].name);
     item.children('.list-item-info').text(events[i].dates.start.localDate);
 
@@ -91,6 +93,7 @@ function displayEventList(json) {
     item.show();
 
     item.children(".get-tickets").click(events[i], function (eventObject) {
+
       //add event ticket url to btn 
       ticketUrl = eventObject.data.url;
       $(this).attr("href", ticketUrl);
@@ -158,5 +161,19 @@ function getRecipesApi(event) {
       }
     });
 }
-
+    
+function populateFooter() {
+  var footer = $("<h3 class= 'black'>")
+  footer.text("Previous Recipes")
+  footerEl.append(footer)
+  for (var i = 0; i < savedMeal.length; i++) {
+    var mealArray = savedMeal[i].mealName;
+    var sourceArray = savedMeal[i].mealSource;
+    var li = $("<li><a href='" + sourceArray + "'>" + mealArray + "</a>" + "<br></li>")
+    footerEl.append(li);
+    console.log(sourceArray);
+  }
+}
+populateFooter();
+    
 inButtonEl.addEventListener("click", getRecipesApi);

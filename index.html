@@ -51,6 +51,7 @@
 
   <div class="grid-y grid-y-padding medium-grid-frame">
     <div class="user-interface grid-x grid-padding-x grid-padding-y grid-container">
+
       <div class="user-api-interface cell thumbnail small-12 medium-12 large-6 grid">
 
         <!-- form for going out and selecting an event-->
@@ -59,6 +60,7 @@
           <h4 class="">Night out? Search for events by date and location here!</h4>
           <!-- search events -->
           <label class="label validate-event" for="keyword">Please select and event or artist</label>
+
           <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, etc.">
 
           <!-- enter location for the event by zipcode -->
@@ -81,6 +83,7 @@
       </div>
 
       <div class="api-results-container cell thumbnail small-12 medium-12 large-6">
+
         <!-- TICKETMASTER API RESULTS PANEL -->
         <div id="event-api-error">
           <p>Yikes! Try another input for results!</p>
@@ -177,10 +180,42 @@
             </div>
           </div>
         </div>
+        <div id="placeholder-content" class="media-object grid-padding-x">
+            <div class="results-container media-object-section ">
+  
+              <div class="cell small-3 responsive-embed ">
+                <img id="hide" class="th" src="https://via.placeholder.com/250x200" alt="">
+              </div>
+            </div>
+            <div>
+              <div id="mealResults" class="cell small-9 results-summary media-object-section ">
+  
+                <h4 id="hide" class="text-center">Placeholder Event Title Here</h3>
+                  <p id="hide" class="text-center">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+                    cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis,
+                    aperiam.
+                    Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus
+                    asperiores
+                    cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus
+                    molestiae
+                    obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+                    repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+                  </p>
+              </div>
+              <div id="testing" class="row"></div>
+              <div>
+                <ul id="recipeHistory"></ul>
+              </div>
+            </div>
+          </div>
       </div>
 
     </div>
   </div>
+  <br>
+  <br>
+
 
   <!-- footer starts here -->
   <footer class=" grid-padding-x grid-padding-y">
@@ -191,6 +226,8 @@
       <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
       </h5>
     </div>
+    <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
+    </h5>
   </footer>
 
 

@@ -10,6 +10,9 @@ body {
   display: flex;
 }
 
+footer h5 {
+  font-family: Lobster;
+}
 
 h1 {
   font-family: Lobster;
@@ -56,7 +59,6 @@ footer {
 footer h5 {
   font-family: Lobster;
 }
-
 
 form h4, .user-interface h4 {
   font-weight: bold;

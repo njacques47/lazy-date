@@ -100,7 +100,7 @@ function displayEventList(json) {
 
 function getRecipesApi(event) {
   event.preventDefault();
-  
+
   hideTicketmaster(); // hides TM api
 
   fetch(requestMealUrl)
@@ -109,7 +109,7 @@ function getRecipesApi(event) {
     })
     .then(function (mealData) {
       var meal = mealData.meals;
-  
+
       // Removes the old recipe after generating a new one
       randomMeal.empty();
       testingEl.empty();
@@ -155,8 +155,7 @@ function getRecipesApi(event) {
         }
         localStorage.setItem("savedMeal", JSON.stringify(savedMeal));
       }
-    });    
+    });
 }
 
 inButtonEl.addEventListener("click", getRecipesApi);
-

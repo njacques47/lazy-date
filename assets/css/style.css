@@ -143,7 +143,7 @@ form h4, .user-interface h4 {
   width: 50%;
 }
 
-#event-api-error, #event-panel, #placeholder-img {
+#event-api-error, #event-panel {
   display: none;
 }
 

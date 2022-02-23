@@ -31,19 +31,14 @@
       <!-- navigation & ul goes here -->
       <ul class="dropdown menu">
         <li class="navbar">
-          <!-- saved events/date ideas -->
-          <a href="#saved">Saved Events</a>
-        </li>
-        <li class="navbar">
-          <!-- about the developers page -->
-          <a href="#about">About</a>
+          <!-- previous meals **NOTE: only shows when MEALSDB has been clicked -->
+          <a href="#saved">Previous Meals</a>
         </li>
       </ul>
     </nav>
   </header>
 
 
-  <!-- jumbotron for testamonials? not sold on this so we can revisit -->
   <section class="grid-container text-center">
     <h3>
       Do you suck at planning dates? We got you covered!
@@ -56,7 +51,8 @@
 
   <div class="grid-y grid-y-padding medium-grid-frame">
     <div class="user-interface grid-x grid-padding-x grid-padding-y grid-container">
-      <div class="cell thumbnail small-12 medium-12 large-6 grid">
+
+      <div class="user-api-interface cell thumbnail small-12 medium-12 large-6 grid">
 
         <!-- form for going out and selecting an event-->
         <form id="form-submit" class="form-out" action="">
@@ -64,7 +60,8 @@
           <h4 class="">Night out? Search for events by date and location here!</h4>
           <!-- search events -->
           <label class="label validate-event" for="keyword">Please select and event or artist</label>
-          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, ">
+
+          <input type="search" name="keyword" id="keyword-entry" placeholder="sports, music, arts, etc.">
 
           <!-- enter location for the event by zipcode -->
           <label class="label" for="postalCode">Enter zipcode to search:</label>
@@ -84,9 +81,9 @@
 
         </form>
       </div>
-      
 
-      <div class="cell thumbnail small-12 medium-12 large-6">
+      <div class="api-results-container cell thumbnail small-12 medium-12 large-6">
+
         <!-- TICKETMASTER API RESULTS PANEL -->
         <div id="event-api-error">
           <p>Yikes! Try another input for results!</p>
@@ -147,6 +144,42 @@
             </div>
           </div>
         </div>
+
+        <!-- MEALSDB API Results -->
+        <div id="placeholder-content" class="media-object grid-padding-x">
+          <div class="results-container media-object-section ">
+            <!-- img container -->
+            <div class="cell small-3 responsive-embed ">
+              <img id="placeholder-img" class="th" src="https://via.placeholder.com/250x200" alt="">
+            </div>
+          </div>
+
+          <!-- meal results rendered here -->
+          <div class="meal-results-section" id="meal-results-section">
+            <div id="mealResults" class="cell small-9 results-summary media-object-section ">
+
+              <h4 id="" class="text-center">Placeholder Event Title Here</h3>
+                <p id="" class="text-center">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias aliquid recusandae eum, porro
+                  cupiditate, facere corrupti ipsum, sed dolorem id voluptas vitae incidunt eveniet rem! Blanditiis,
+                  aperiam.
+                  Corrupti doloribus velit ut? Modi, iusto perspiciatis similique possimus labore, cupiditate minus
+                  asperiores
+                  cumque omnis expedita architecto id repellat, illum dignissimos recusandae! Facilis voluptatibus
+                  molestiae
+                  obcaecati architecto, esse nesciunt deleniti reprehenderit pariatur sequi dicta alias ipsam corrupti
+                  repudiandae delectus illum voluptas aperiam dolor quae. Ea nulla omnis excepturi!
+                </p>
+
+            </div>
+            <!-- Meal Buttons go here -->
+            <div id="testing" class="row"></div>
+
+            <div class="saved-recipies">
+              <ul id="recipeHistory" class="recipeHistory"></ul>
+            </div>
+          </div>
+        </div>
         <div id="placeholder-content" class="media-object grid-padding-x">
             <div class="results-container media-object-section ">
   
@@ -179,23 +212,19 @@
       </div>
 
     </div>
-
   </div>
   <br>
   <br>
 
 
+  <!-- footer starts here -->
   <footer class=" grid-padding-x grid-padding-y">
-    <!-- footer -->
-    <div class="mobile-bottom-bar footer-elements" id="saved">
-
+    <div id="saved" class="recipeHistory">
+      <!-- saved items go here -->
     </div>
-    <div class="footer-elements">
-
-
-    </div>
-    <div class="footer-elements" id="about">
-
+    <div class="mobile-bottom-bar footer-elements ">
+      <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
+      </h5>
     </div>
     <h5>Thank you for visiting and enjoy your date! <div class="heart"></div>
     </h5>

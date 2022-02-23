@@ -8,5 +8,6 @@ As a USER, I want to be able to quickly pull up a date idea. When I use the webs
 - ability to filter search based on family friendly rating
 
 ## Deployed Links
-- https://github.com/njacques47/lazy-date/
-- https://njacques47.github.io/lazy-date/
+[Github](https://github.com/njacques47/lazy-date) <br>
+[Deployed Page](https://njacques47.github.io/lazy-date/)
+

@@ -4,6 +4,16 @@ body {
 
 }
 
+.user-interface {
+  background-color: #eff3e3;
+  border-color: 6px solid red;
+  display: flex;
+}
+
+footer h5 {
+  font-family: Lobster;
+}
+
 h1 {
   font-family: Lobster;
 }
@@ -50,16 +60,6 @@ footer h5 {
   font-family: Lobster;
 }
 
-
-.vl {
-  border-left: 6px solid eff3e3;
-  height: 450px;
-  position: absolute;
-  left: 50%;
-  top: 50;
-}
-
-
 form h4, .user-interface h4 {
   font-weight: bold;
 }
@@ -68,7 +68,6 @@ form h4, .user-interface h4 {
   
   border-radius: 4%;
   padding: 20px;
-  /* display: flex; */
 }
 
 .title-background {
@@ -142,4 +141,9 @@ form h4, .user-interface h4 {
   text-align: center;
   border: 3px solid red;
   padding-top: 15px;
+}
+
+ a {
+  text-decoration: none;
+  color: #000;
 }

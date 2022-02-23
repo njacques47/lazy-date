@@ -1,8 +1,8 @@
 var startEl = document.querySelector("#start");
 var inButtonEl = document.querySelector("#inButton");
 var fetchTicketsEl = document.querySelector("#searchButton");
-
-var testingEl = $("#testing")
+var footerEl = $("#saved");
+var mealButtonsEl = $("#meal-buttons");
 var randomMeal = $("#mealResults");
 var recipeHistoryEl = $(".recipeHistory")
 var favButtonEl = $("#favButton");
@@ -26,7 +26,7 @@ var eventErrorHandle = function () {
   $("#event-api-error").show();
   hideMeals();
   $("#event-panel").hide(); // hide if showing when error is thrown
-}
+};
 
 //when this document is ready, do this
 $(document).ready(function () {
@@ -116,7 +116,7 @@ function getRecipesApi(event) {
 
       // Removes the old recipe after generating a new one
       randomMeal.empty();
-      testingEl.empty();
+      mealButtonsEl.empty();
       recipeHistoryEl.empty();
 
       for (var i = 0; i < meal.length; i++) {
@@ -132,9 +132,9 @@ function getRecipesApi(event) {
         var img = $("<img class='thumbnail' src=" + recipeImage + "><br>")
         randomMeal.append(img)
         var a1 = $("<a class='button primary' href=" + recipeSource + ">Source</a><br>")
-        testingEl.append(a1)
+        mealButtonsEl.append(a1)
         var a2 = $("<a class='button primary' href=" + mealVideo + ">Video</a>")
-        testingEl.append(a2)
+        mealButtonsEl.append(a2)
 
         // appends the list of previous results to the html body
         var intro = $("<h3 class= 'black'>")

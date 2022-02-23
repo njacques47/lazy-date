@@ -1,14 +1,7 @@
 body {
   margin: 0;
-}
+  background: linear-gradient(#2c3cf0, #c7cbf5);
 
-.vl {
-  border-left: 6px solid green;
-  height: 450px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 50;
 }
 
 .split-left {
@@ -27,4 +20,140 @@ body {
   background-color: #C6CCB2;
   border-color: 6px solid red;
   display: flex;
+}
+
+
+h1 {
+  font-family: Lobster;
+}
+
+nav ul li a {
+  color: #dce7f5;
+}
+
+
+h3 {
+  font-family: Lobster;
+  color: #dce7f5;
+}
+
+.black {
+  color: black;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+section h4 {
+  font-family: Lobster;
+}
+
+footer {
+  padding: 20px;
+}
+
+footer h5 {
+  font-family: Lobster;
+}
+
+
+form h4, .user-interface h4 {
+  font-weight: bold;
+}
+
+.user-interface {
+  
+  border-radius: 4%;
+  padding: 20px;
+}
+
+.title-background {
+  padding-left: 20px;
+  background: linear-gradient(#f83434, #2c3cf0);
+  color: #eff3e3;
+}
+
+.top-bar {
+  background: #2c3cf0;
+}
+
+.navbar {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #2c3cf0ea;
+  color: #dce7f5;
+}
+
+.navbar:hover {
+  background: #dce7f5;
+}
+
+.show-for-medium {
+  color: #dce7f5;
+}
+
+.th {
+  padding: 10px;
+}
+
+.thumbnail {
+  border-radius: 4%;
+  background: #dce7f5;
+  width: 50%;
+}
+
+.heart { 
+  position: relative; 
+  width: 100px; 
+  height: 90px; 
+} 
+
+.heart:before, .heart:after { 
+  position: absolute; 
+  content: ""; 
+  left: 50px; 
+  top: 0; 
+  width: 50px; 
+  height: 80px; 
+  background: red; 
+  border-radius: 50px 50px 0 0; 
+  transform: rotate(-45deg); 
+  transform-origin: 0 100%; 
+} 
+
+.heart:after { 
+  left: 0; 
+  transform: rotate(45deg); 
+  transform-origin :100% 100%; 
+}
+.shrink {
+  width: 50%;
+}
+
+#event-api-error, #event-panel, #placeholder-img {
+  display: none;
+}
+
+#event-api-error {
+  text-align: center;
+  border: 3px solid red;
+  padding-top: 15px;
+}
+
+ a {
+  text-decoration: none;
+  color: #000;
 }

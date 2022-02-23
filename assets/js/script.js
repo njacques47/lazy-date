@@ -24,6 +24,7 @@ var hideMeals = function () {
 var eventErrorHandle = function () {
   $("#event-api-error").show();
   hideMeals();
+  $("#event-panel").hide(); // hide if showing when error is thrown
 }
 
 //when this document is ready, do this
